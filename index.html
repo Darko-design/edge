@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EDGE® — Arhitektonski studio</title>
+<meta name="description" content="Projektujemo stambene, poslovne i javne prostore u kojima se forma i funkcija spajaju sa održivim materijalima i pametnim tehnologijama.">
+<meta name="theme-color" content="#121211">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Početna stanja animacija važe samo kad JS radi; ako main.js ne stigne, sadržaj se ipak prikaže.
+  document.documentElement.classList.add('js');
+  setTimeout(function () { document.documentElement.classList.add('is-in'); }, 2500);
+</script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Preskoči na sadržaj</a>
+
+<header class="hdr" id="top">
+  <a href="./" class="hdr__logo" aria-label="EDGE®, početna stranica">EDGE®</a>
+  <div class="hdr__r">
+    <div class="lang"><a href="#" aria-current="page">SR</a><span aria-hidden="true">/</span><a href="#" lang="en">EN</a></div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="menu-btn__lbl">MENI</span>
+      <span class="menu-btn__ico" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-label="Meni" inert>
+  <div class="menu__grid">
+    <div class="menu__l">
+      <nav class="menu__nav" aria-label="Glavna navigacija">
+        <div class="menu__mask" style="--i:0"><a href="#projekti" class="is-cur"><span class="menu__dot" aria-hidden="true"></span>Projekti</a></div>
+        <div class="menu__mask" style="--i:1"><a href="#pristup"><span class="menu__dot" aria-hidden="true"></span>Pristup</a></div>
+        <div class="menu__mask" style="--i:2"><a href="#proces"><span class="menu__dot" aria-hidden="true"></span>Proces</a></div>
+        <div class="menu__mask" style="--i:3"><a href="#pristup"><span class="menu__dot" aria-hidden="true"></span>Održivost</a></div>
+        <div class="menu__mask" style="--i:4"><a href="#kontakt"><span class="menu__dot" aria-hidden="true"></span>Kontakt</a></div>
+      </nav>
+      <div class="menu__lang menu__f1"><a href="#" aria-current="page">Srpski</a><span aria-hidden="true">/</span><a href="#" lang="en">English</a></div>
+    </div>
+    <div class="menu__r menu__f2">
+      <div class="menu__proj">
+        <div class="menu__h">Izabrani projekti</div>
+        <div class="menu__thumbs">
+          <a href="#projekti" class="menu__thumb"><div class="menu__img"><div class="pic" style="--tone:#48534b"><img src="img/proj-01-960.webp" srcset="img/proj-01-400.webp 400w, img/proj-01-640.webp 640w, img/proj-01-960.webp 960w, img/proj-01-1280.webp 1280w, img/proj-01-1333.webp 1333w" sizes="(min-width: 1024px) 18vw, (max-width: 767px) and (min-resolution: 2.5dppx) 29vw, 43vw" width="1333" height="2000" alt="" loading="lazy" decoding="async"></div></div><span>Naziv projekta</span></a>
+          <a href="#projekti" class="menu__thumb"><div class="menu__img"><div class="pic" style="--tone:#545350"><img src="img/proj-02-960.webp" srcset="img/proj-02-400.webp 400w, img/proj-02-640.webp 640w, img/proj-02-960.webp 960w, img/proj-02-1280.webp 1280w, img/proj-02-1500.webp 1500w" sizes="(min-width: 1024px) 18vw, (max-width: 767px) and (min-resolution: 2.5dppx) 29vw, 43vw" width="1500" height="2000" alt="" loading="lazy" decoding="async"></div></div><span>Naziv projekta</span></a>
+        </div>
+        <a href="#projekti" class="menu__all"><span>Svi projekti</span><span class="ar" aria-hidden="true">→</span></a>
+      </div>
+      <div class="menu__cta">
+        <div class="menu__q">Imate projekat na umu?</div>
+        <div class="menu__contact mono"><a href="mailto:email@domen.com">EMAIL@DOMEN.COM</a><a href="tel:+0000000000000">+000 00 000 0000</a></div>
+        <a href="#kontakt" class="btn btn--solid"><span>Započnite projekat</span><span class="ar" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Uvod">
+    <h1 class="hero__title display">
+      <span class="w" style="--dm:.1s;--dd:.1s"><span>Arhitektura</span></span><br class="br-m">
+      <span class="w" style="--dm:.2s;--dd:.1s"><span>koja</span></span><br class="br-d">
+      <span class="w" style="--dm:.2s;--dd:.2s"><span>pomera</span></span><br class="br-m">
+      <span class="w" style="--dm:.3s;--dd:.2s"><span>granice</span></span>
+    </h1>
+    <div class="hero__grid">
+      <div class="hero__body">
+        <p class="hero__lead">Projektujemo stambene, poslovne i javne prostore u kojima se forma i funkcija spajaju sa održivim materijalima i pametnim tehnologijama.</p>
+        <div class="hero__btns">
+          <a href="#kontakt" class="btn btn--solid"><span>Započnite projekat</span><span class="ar" aria-hidden="true">→</span></a>
+          <a href="#kontakt" class="btn btn--line"><span>Zakažite konsultacije</span><span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <div class="rv-o"><div class="rv-i">
+          <div class="slide is-on" data-type="Stambeni"><div class="slide__o"><div class="slide__i"><div class="slide__m"><div class="pic" style="--tone:#686a68"><img src="img/hero-01-960.webp" srcset="img/hero-01-400.webp 400w, img/hero-01-640.webp 640w, img/hero-01-960.webp 960w, img/hero-01-1280.webp 1280w, img/hero-01-1600.webp 1600w, img/hero-01-2000.webp 2000w" sizes="(min-width: 1024px) 52vw, (min-width: 768px) 102vw, (max-width: 767px) and (min-resolution: 2.5dppx) 75vw, 113vw" width="2000" height="1335" alt="Savremena porodična kuća sa popločanim prilazom i kapijom" style="object-position:50% 30%" fetchpriority="high" decoding="async"></div></div></div></div></div>
+          <div class="slide" data-type="Poslovni"><div class="slide__o"><div class="slide__i"><div class="slide__m"><div class="pic" style="--tone:#43433f"><img src="img/hero-02-960.webp" srcset="img/hero-02-400.webp 400w, img/hero-02-640.webp 640w, img/hero-02-960.webp 960w, img/hero-02-1280.webp 1280w, img/hero-02-1600.webp 1600w, img/hero-02-2000.webp 2000w" sizes="(min-width: 1024px) 52vw, (min-width: 768px) 102vw, (max-width: 767px) and (min-resolution: 2.5dppx) 75vw, 113vw" width="2000" height="1335" alt="Sala za sastanke sa staklenom fasadom i betonskim plafonom" loading="lazy" decoding="async"></div></div></div></div></div>
+          <div class="slide" data-type="Javni"><div class="slide__o"><div class="slide__i"><div class="slide__m"><div class="pic" style="--tone:#5a6061"><img src="img/hero-03-960.webp" srcset="img/hero-03-400.webp 400w, img/hero-03-640.webp 640w, img/hero-03-960.webp 960w, img/hero-03-1280.webp 1280w, img/hero-03-1600.webp 1600w, img/hero-03-2000.webp 2000w" sizes="(min-width: 1024px) 52vw, (min-width: 768px) 91vw, (max-width: 767px) and (min-resolution: 2.5dppx) 67vw, 100vw" width="2000" height="1500" alt="Javni trg sa travnatim površinama i širokim stepeništem" loading="lazy" decoding="async"></div></div></div></div></div>
+          <div class="slide is-prev" data-type="Stambeni"><div class="slide__o"><div class="slide__i"><div class="slide__m"><div class="pic" style="--tone:#565d5b"><img src="img/hero-04-960.webp" srcset="img/hero-04-400.webp 400w, img/hero-04-640.webp 640w, img/hero-04-960.webp 960w, img/hero-04-1280.webp 1280w, img/hero-04-1600.webp 1600w, img/hero-04-2000.webp 2000w" sizes="(min-width: 1024px) 52vw, (min-width: 768px) 88vw, (max-width: 767px) and (min-resolution: 2.5dppx) 60vw, 90vw" width="2000" height="2000" alt="Vizualizacija bele kuće sa staklenom fasadom i bazenom" style="object-position:50% 40%" loading="lazy" decoding="async"></div></div></div></div></div>
+          <div class="hero__cap mono"><span>[<span data-hero-n>01</span>/04]</span><span data-hero-type>STAMBENI</span></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJEKTI -->
+  <section class="projects" id="projekti" aria-labelledby="projekti-h">
+    <div class="projects__head">
+      <div class="projects__intro">
+        <p class="label mono">PROJEKTI</p>
+        <h2 class="display h-xl" id="projekti-h">Izabrani projekti</h2>
+        <p class="lead">Svaki projekat je odgovor na konkretno mesto, klijenta i nameru. Pogledajte kako to izgleda u praksi.</p>
+      </div>
+      <p class="projects__hint mono" aria-hidden="true">SKROLUJTE <span class="bob">↓</span></p>
+    </div>
+
+    <div class="pin pin--proj">
+      <div class="pin__frame proj">
+        <div class="proj__text">
+          <div class="drum" aria-hidden="true">
+            <div class="drum__t display">Linea Residence</div>
+            <div class="drum__t display">Atria Offices</div>
+            <div class="drum__t display">Forum Entrance</div>
+            <div class="drum__t display">Villa Aurea</div>
+            <div class="drum__t display">Transit</div>
+            <div class="drum__t display">Atelier Office</div>
+          </div>
+          <div class="proj__meta">
+            <p class="mono muted"><span data-p-n>01</span> · <span data-p-type>STAMBENI</span> · <span data-p-place>MIAMI · 2025</span></p>
+            <p class="proj__desc" data-p-desc>Moderna stambena zgrada čistih linija i savremenog karaktera, projektovana sa fokusom na udobnost i kvalitet svakodnevnog života.</p>
+          </div>
+        </div>
+        <div class="proj__media">
+          <div class="proj__stack">
+            <div class="pimg" data-type="Stambeni"><div class="pimg__o"><div class="pimg__i"><div class="pimg__m"><div class="pic" style="--tone:#48534b"><img src="img/proj-01-960.webp" srcset="img/proj-01-400.webp 400w, img/proj-01-640.webp 640w, img/proj-01-960.webp 960w, img/proj-01-1280.webp 1280w, img/proj-01-1333.webp 1333w" sizes="(min-width: 1024px) 52vw, (min-width: 768px) 88vw, (max-width: 767px) and (min-resolution: 2.5dppx) 60vw, 90vw" width="1333" height="2000" alt="Stambena zgrada od opeke u zalasku sunca" loading="lazy" decoding="async"></div></div></div></div></div>
+            <div class="pimg" data-type="Poslovni"><div class="pimg__o"><div class="pimg__i"><div class="pimg__m"><div class="pic" style="--tone:#545350"><img src="img/proj-02-960.webp" srcset="img/proj-02-400.webp 400w, img/proj-02-640.webp 640w, img/proj-02-960.webp 960w, img/proj-02-1280.webp 1280w, img/proj-02-1500.webp 1500w" sizes="(min-width: 1024px) 52vw, (min-width: 768px) 88vw, (max-width: 767px) and (min-resolution: 2.5dppx) 60vw, 90vw" width="1500" height="2000" alt="Poslovni toranj sa zakrivljenom staklenom fasadom" loading="lazy" decoding="async"></div></div></div></div></div>
+            <div class="pimg" data-type="Javni"><div class="pimg__o"><div class="pimg__i"><div class="pimg__m"><div class="pic" style="--tone:#424853"><img src="img/proj-03-960.webp" srcset="img/proj-03-400.webp 400w, img/proj-03-640.webp 640w, img/proj-03-960.webp 960w, img/proj-03-1280.webp 1280w, img/proj-03-1600.webp 1600w, img/proj-03-2000.webp 2000w" sizes="(min-width: 1024px) 69vw, (min-width: 768px) 133vw, (max-width: 767px) and (min-resolution: 2.5dppx) 106vw, 159vw" width="2000" height="1333" alt="Betonska fasada i stepenište koncertne dvorane" loading="lazy" decoding="async"></div></div></div></div></div>
+            <div class="pimg" data-type="Stambeni"><div class="pimg__o"><div class="pimg__i"><div class="pimg__m"><div class="pic" style="--tone:#575d4a"><img src="img/proj-04-960.webp" srcset="img/proj-04-400.webp 400w, img/proj-04-640.webp 640w, img/proj-04-960.webp 960w, img/proj-04-1125.webp 1125w" sizes="(min-width: 1024px) 52vw, (min-width: 768px) 88vw, (max-width: 767px) and (min-resolution: 2.5dppx) 71vw, 106vw" width="1125" height="1125" alt="Vizualizacija betonske kuće sa bazenom i vrtom" loading="lazy" decoding="async"></div></div></div></div></div>
+            <div class="pimg" data-type="Javni"><div class="pimg__o"><div class="pimg__i"><div class="pimg__m"><div class="pic" style="--tone:#676967"><img src="img/proj-05-960.webp" srcset="img/proj-05-400.webp 400w, img/proj-05-640.webp 640w, img/proj-05-960.webp 960w, img/proj-05-1280.webp 1280w, img/proj-05-1600.webp 1600w, img/proj-05-2000.webp 2000w" sizes="(min-width: 1024px) 69vw, (min-width: 768px) 133vw, (max-width: 767px) and (min-resolution: 2.5dppx) 106vw, 159vw" width="2000" height="1333" alt="Nadstrešnica od platna iznad stepeništa u parku" loading="lazy" decoding="async"></div></div></div></div></div>
+            <div class="pimg" data-type="Poslovni"><div class="pimg__o"><div class="pimg__i"><div class="pimg__m"><div class="pic" style="--tone:#585247"><img src="img/proj-06-960.webp" srcset="img/proj-06-400.webp 400w, img/proj-06-640.webp 640w, img/proj-06-960.webp 960w, img/proj-06-1280.webp 1280w, img/proj-06-1500.webp 1500w" sizes="(min-width: 1024px) 53vw, (min-width: 768px) 101vw, (max-width: 767px) and (min-resolution: 2.5dppx) 81vw, 121vw" width="1500" height="1316" alt="Otvoreni kancelarijski prostor sa drvenim stolovima" loading="lazy" decoding="async"></div></div></div></div></div>
+            <div class="proj__cap mono"><span>[<span data-p-n>01</span>/06]</span><span data-p-type>STAMBENI</span></div>
+            <div class="proj__bar"><i></i></div>
+          </div>
+          <a href="#" class="circle mono"><span>POGLEDAJTE<br>PROJEKAT</span><span class="circle__ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O NAMA -->
+  <section class="about" id="o-nama" aria-labelledby="about-h">
+    <div class="pin pin--about">
+      <div class="pin__frame about__frame">
+        <div class="ring" aria-hidden="true">
+          <div class="ring__card"><div class="pic" style="--tone:#575d4a"><img src="img/proj-04-960.webp" srcset="img/proj-04-400.webp 400w, img/proj-04-640.webp 640w, img/proj-04-960.webp 960w, img/proj-04-1125.webp 1125w" sizes="(min-width: 1024px) 13vw, (min-width: 768px) 25vw, (max-width: 767px) and (min-resolution: 2.5dppx) 24vw, 36vw" width="1125" height="1125" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="ring__card"><div class="pic" style="--tone:#4d5257"><img src="img/onama-02-960.webp" srcset="img/onama-02-400.webp 400w, img/onama-02-640.webp 640w, img/onama-02-960.webp 960w, img/onama-02-1280.webp 1280w, img/onama-02-1333.webp 1333w" sizes="(min-width: 1024px) 10vw, (min-width: 768px) 19vw, (max-width: 767px) and (min-resolution: 2.5dppx) 19vw, 28vw" width="1333" height="2000" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="ring__card"><div class="pic" style="--tone:#545350"><img src="img/proj-02-960.webp" srcset="img/proj-02-400.webp 400w, img/proj-02-640.webp 640w, img/proj-02-960.webp 960w, img/proj-02-1280.webp 1280w, img/proj-02-1500.webp 1500w" sizes="(min-width: 1024px) 10vw, (min-width: 768px) 19vw, (max-width: 767px) and (min-resolution: 2.5dppx) 19vw, 28vw" width="1500" height="2000" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="ring__card"><div class="pic" style="--tone:#48534b"><img src="img/proj-01-960.webp" srcset="img/proj-01-400.webp 400w, img/proj-01-640.webp 640w, img/proj-01-960.webp 960w, img/proj-01-1280.webp 1280w, img/proj-01-1333.webp 1333w" sizes="(min-width: 1024px) 10vw, (min-width: 768px) 19vw, (max-width: 767px) and (min-resolution: 2.5dppx) 19vw, 28vw" width="1333" height="2000" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="ring__card"><div class="pic" style="--tone:#686a68"><img src="img/hero-01-960.webp" srcset="img/hero-01-400.webp 400w, img/hero-01-640.webp 640w, img/hero-01-960.webp 960w, img/hero-01-1280.webp 1280w, img/hero-01-1600.webp 1600w, img/hero-01-2000.webp 2000w" sizes="(min-width: 1024px) 19vw, (min-width: 768px) 37vw, (max-width: 767px) and (min-resolution: 2.5dppx) 36vw, 54vw" width="2000" height="1335" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="ring__card"><div class="pic" style="--tone:#50493d"><img src="img/onama-06-960.webp" srcset="img/onama-06-400.webp 400w, img/onama-06-640.webp 640w, img/onama-06-960.webp 960w, img/onama-06-1280.webp 1280w, img/onama-06-1600.webp 1600w, img/onama-06-2000.webp 2000w" sizes="(min-width: 1024px) 17vw, (min-width: 768px) 33vw, (max-width: 767px) and (min-resolution: 2.5dppx) 32vw, 48vw" width="2000" height="1500" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="ring__card"><div class="pic" style="--tone:#545451"><img src="img/onama-07-960.webp" srcset="img/onama-07-400.webp 400w, img/onama-07-640.webp 640w, img/onama-07-960.webp 960w, img/onama-07-1280.webp 1280w, img/onama-07-1600.webp 1600w, img/onama-07-2000.webp 2000w" sizes="(min-width: 1024px) 20vw, (min-width: 768px) 37vw, (max-width: 767px) and (min-resolution: 2.5dppx) 37vw, 55vw" width="2000" height="1322" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="ring__card"><div class="pic" style="--tone:#5a6061"><img src="img/hero-03-960.webp" srcset="img/hero-03-400.webp 400w, img/hero-03-640.webp 640w, img/hero-03-960.webp 960w, img/hero-03-1280.webp 1280w, img/hero-03-1600.webp 1600w, img/hero-03-2000.webp 2000w" sizes="(min-width: 1024px) 17vw, (min-width: 768px) 33vw, (max-width: 767px) and (min-resolution: 2.5dppx) 32vw, 48vw" width="2000" height="1500" alt="" loading="lazy" decoding="async"></div></div>
+        </div>
+        <div class="about__c">
+          <div class="about__h">
+            <p class="label mono">O NAMA</p>
+            <h2 class="display h-m" id="about-h">Forma i funkcija,<br>bez kompromisa</h2>
+          </div>
+          <p class="about__txt" data-words>EDGE® je arhitektonski studio posvećen inovativnom i održivom projektovanju. Ne pristajemo na rešenja koja su samo lepa ili samo praktična. Svaki prostor koji potpisujemo mora da inspiriše, da služi ljudima koji ga koriste i da odgovorno koristi resurse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRISTUP -->
+  <section class="approach" id="pristup" aria-labelledby="pristup-h">
+    <p class="label mono">PRISTUP</p>
+    <h2 class="display h-xl" id="pristup-h">Tri principa<br>na kojima gradimo</h2>
+    <div class="pr-wrap">
+      <article class="pr is-open">
+        <button class="pr__toggle" type="button" aria-expanded="true" aria-controls="pr-1">
+          <span class="pr__n mono">01</span>
+          <span class="pr__t display">Estetika</span>
+          <span class="pr__sign" aria-hidden="true"></span>
+        </button>
+        <div class="pr__body" id="pr-1">
+          <div class="pr__inner">
+            <div class="pr__col">
+              <span class="pr__count mono">01 / 03</span>
+              <div class="pr__txt">
+                <h3 class="pr__h display">Estetika</h3>
+                <p>Prostor sa jasnim karakterom, oblikovan prema Vašem identitetu i mestu na kom nastaje.</p>
+              </div>
+            </div>
+            <div class="pr__media"><div class="pic" style="--tone:#3a312d"><img src="img/pristup-01-960.webp" srcset="img/pristup-01-400.webp 400w, img/pristup-01-640.webp 640w, img/pristup-01-960.webp 960w, img/pristup-01-1280.webp 1280w, img/pristup-01-1333.webp 1333w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 44vw, (max-width: 767px) and (min-resolution: 2.5dppx) 60vw, 90vw" width="1333" height="2000" alt="Detalj fasade od terakota panela" loading="lazy" decoding="async"></div></div>
+          </div>
+        </div>
+      </article>
+      <article class="pr">
+        <button class="pr__toggle" type="button" aria-expanded="false" aria-controls="pr-2">
+          <span class="pr__n mono">02</span>
+          <span class="pr__t display">Održivost</span>
+          <span class="pr__sign" aria-hidden="true"></span>
+        </button>
+        <div class="pr__body" id="pr-2">
+          <div class="pr__inner">
+            <div class="pr__col">
+              <span class="pr__count mono">02 / 03</span>
+              <div class="pr__txt">
+                <h3 class="pr__h display">Održivost</h3>
+                <p>Ekološki prihvatljivi materijali i rešenja koja smanjuju uticaj na životnu sredinu.</p>
+              </div>
+            </div>
+            <div class="pr__media"><div class="pic" style="--tone:#495356"><img src="img/pristup-02-960.webp" srcset="img/pristup-02-400.webp 400w, img/pristup-02-640.webp 640w, img/pristup-02-960.webp 960w, img/pristup-02-1280.webp 1280w, img/pristup-02-1333.webp 1333w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 44vw, (max-width: 767px) and (min-resolution: 2.5dppx) 60vw, 90vw" width="1333" height="2000" alt="Toranj sa zakrivljenom rešetkom i zelenim terasama" loading="lazy" decoding="async"></div></div>
+          </div>
+        </div>
+      </article>
+      <article class="pr">
+        <button class="pr__toggle" type="button" aria-expanded="false" aria-controls="pr-3">
+          <span class="pr__n mono">03</span>
+          <span class="pr__t display">Upotrebljivost</span>
+          <span class="pr__sign" aria-hidden="true"></span>
+        </button>
+        <div class="pr__body" id="pr-3">
+          <div class="pr__inner">
+            <div class="pr__col">
+              <span class="pr__count mono">03 / 03</span>
+              <div class="pr__txt">
+                <h3 class="pr__h display">Upotrebljivost</h3>
+                <p>Funkcija je polazna tačka svakog projekta, a ne naknadna misao.</p>
+              </div>
+            </div>
+            <div class="pr__media"><div class="pic" style="--tone:#5d5541"><img src="img/pristup-03-960.webp" srcset="img/pristup-03-400.webp 400w, img/pristup-03-640.webp 640w, img/pristup-03-960.webp 960w, img/pristup-03-1280.webp 1280w, img/pristup-03-1333.webp 1333w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 44vw, (max-width: 767px) and (min-resolution: 2.5dppx) 60vw, 90vw" width="1333" height="2000" alt="Skulpturalno betonsko stepenište sa biciklistom u prolazu" style="object-position:50% 75%" loading="lazy" decoding="async"></div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROCES -->
+  <section class="process" id="proces" aria-labelledby="proces-h">
+    <div class="pin pin--proc">
+      <div class="pin__frame proc">
+        <div class="proc__l">
+          <div>
+            <p class="label mono">PROCES</p>
+            <h2 class="display h-m" id="proces-h">Projektujemo<br>zajedno sa Vama</h2>
+            <p class="lead">Za nas saradnja nije jedna faza projekta. To je način na koji radimo od prvog razgovora.</p>
+          </div>
+          <div class="proc__num" aria-hidden="true"><span class="display" data-proc-n>01</span><span class="mono muted">/ 04</span></div>
+        </div>
+        <div class="proc__r">
+          <div class="proc__line" aria-hidden="true"><i></i></div>
+          <ol class="steps">
+            <li class="step is-cur is-past"><span class="step__dot" aria-hidden="true"></span><span class="step__n mono">01</span><h3 class="step__t display">Upoznavanje</h3><p class="step__d">Slušamo Vaše potrebe, ciljeve i očekivanja od prostora.</p></li>
+            <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__n mono">02</span><h3 class="step__t display">Koncept</h3><p class="step__d">Razvijamo idejno rešenje i razmatramo ga sa Vama.</p></li>
+            <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__n mono">03</span><h3 class="step__t display">Razrada</h3><p class="step__d">Usklađujemo estetiku, održivost i funkcionalnost do detalja.</p></li>
+            <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__n mono">04</span><h3 class="step__t display">Završno rešenje</h3><p class="step__d">Dobijate projekat koji ste oblikovali zajedno sa nama.</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ISKUSTVA KLIJENATA -->
+  <section class="testi" aria-labelledby="testi-h" aria-roledescription="karusel">
+    <div class="testi__head">
+      <p class="label mono">ISKUSTVA KLIJENATA</p>
+      <h2 class="display h-l" id="testi-h">Iskustva klijenata</h2>
+      <p class="lead">Najbolje o našem radu govore ljudi sa kojima smo sarađivali.</p>
+    </div>
+    <button class="sq-btn testi__prev" type="button" aria-label="Prethodna izjava" style="--dir:-1"><span class="ar" aria-hidden="true">←</span></button>
+    <div class="testi__body">
+      <div class="testi__quotes" aria-live="polite">
+        <blockquote class="tq is-on"><p>„Izjava klijenta: jedna do tri rečenice o saradnji sa studijom, procesu i prostoru koji je nastao.“</p></blockquote>
+        <blockquote class="tq" aria-hidden="true"><p>„Izjava klijenta: jedna do tri rečenice o saradnji sa studijom, procesu i prostoru koji je nastao.“</p></blockquote>
+        <blockquote class="tq" aria-hidden="true"><p>„Izjava klijenta: jedna do tri rečenice o saradnji sa studijom, procesu i prostoru koji je nastao.“</p></blockquote>
+        <blockquote class="tq" aria-hidden="true"><p>„Izjava klijenta: jedna do tri rečenice o saradnji sa studijom, procesu i prostoru koji je nastao.“</p></blockquote>
+        <blockquote class="tq" aria-hidden="true"><p>„Izjava klijenta: jedna do tri rečenice o saradnji sa studijom, procesu i prostoru koji je nastao.“</p></blockquote>
+      </div>
+      <div class="testi__count mono"><span data-t-n>01</span> / 05</div>
+      <div class="testi__who">
+        <div class="testi__pics" aria-hidden="true">
+          <div class="tpic is-on"><div class="tpic__o"><div class="tpic__i"><div class="pic" style="--tone:#616260"><img src="img/portret-01-900.webp" srcset="img/portret-01-400.webp 400w, img/portret-01-640.webp 640w, img/portret-01-900.webp 900w" sizes="(min-width: 1024px) 14vw, (min-width: 768px) 28vw, (max-width: 767px) and (min-resolution: 2.5dppx) 29vw, 43vw" width="900" height="680" alt="" loading="lazy" decoding="async"></div></div></div></div>
+          <div class="tpic"><div class="tpic__o"><div class="tpic__i"><div class="pic" style="--tone:#616260"><img src="img/portret-01-900.webp" srcset="img/portret-01-400.webp 400w, img/portret-01-640.webp 640w, img/portret-01-900.webp 900w" sizes="(min-width: 1024px) 14vw, (min-width: 768px) 28vw, (max-width: 767px) and (min-resolution: 2.5dppx) 29vw, 43vw" width="900" height="680" alt="" loading="lazy" decoding="async"></div></div></div></div>
+          <div class="tpic"><div class="tpic__o"><div class="tpic__i"><div class="pic" style="--tone:#616260"><img src="img/portret-01-900.webp" srcset="img/portret-01-400.webp 400w, img/portret-01-640.webp 640w, img/portret-01-900.webp 900w" sizes="(min-width: 1024px) 14vw, (min-width: 768px) 28vw, (max-width: 767px) and (min-resolution: 2.5dppx) 29vw, 43vw" width="900" height="680" alt="" loading="lazy" decoding="async"></div></div></div></div>
+          <div class="tpic"><div class="tpic__o"><div class="tpic__i"><div class="pic" style="--tone:#616260"><img src="img/portret-01-900.webp" srcset="img/portret-01-400.webp 400w, img/portret-01-640.webp 640w, img/portret-01-900.webp 900w" sizes="(min-width: 1024px) 14vw, (min-width: 768px) 28vw, (max-width: 767px) and (min-resolution: 2.5dppx) 29vw, 43vw" width="900" height="680" alt="" loading="lazy" decoding="async"></div></div></div></div>
+          <div class="tpic"><div class="tpic__o"><div class="tpic__i"><div class="pic" style="--tone:#616260"><img src="img/portret-01-900.webp" srcset="img/portret-01-400.webp 400w, img/portret-01-640.webp 640w, img/portret-01-900.webp 900w" sizes="(min-width: 1024px) 14vw, (min-width: 768px) 28vw, (max-width: 767px) and (min-resolution: 2.5dppx) 29vw, 43vw" width="900" height="680" alt="" loading="lazy" decoding="async"></div></div></div></div>
+        </div>
+        <div class="testi__names">
+          <div class="tname is-on"><span class="tname__n">Ime i prezime</span><span class="mono muted">STAMBENI PROJEKAT</span></div>
+          <div class="tname" aria-hidden="true"><span class="tname__n">Ime i prezime</span><span class="mono muted">POSLOVNI PROJEKAT</span></div>
+          <div class="tname" aria-hidden="true"><span class="tname__n">Ime i prezime</span><span class="mono muted">JAVNI PROJEKAT</span></div>
+          <div class="tname" aria-hidden="true"><span class="tname__n">Ime i prezime</span><span class="mono muted">STAMBENI PROJEKAT</span></div>
+          <div class="tname" aria-hidden="true"><span class="tname__n">Ime i prezime</span><span class="mono muted">POSLOVNI PROJEKAT</span></div>
+        </div>
+      </div>
+    </div>
+    <button class="sq-btn testi__next" type="button" aria-label="Sledeća izjava"><span class="ar" aria-hidden="true">→</span></button>
+  </section>
+
+</main>
+
+<!-- KONTAKT / PODNOŽJE -->
+<footer class="ftr" id="kontakt">
+  <a href="mailto:email@domen.com" class="cta">
+    <span class="cta__base"><span class="cta__txt display">Imate projekat na umu?</span></span>
+    <span class="cta__over" aria-hidden="true"><span class="cta__txt display">Zakažite konsultacije</span><span class="cta__ar">→</span></span>
+  </a>
+  <div class="ftr__row">
+    <p class="lead">Razgovarajmo o prostoru koji želite da stvorite. Zakažite konsultacije i zajedno ćemo definisati prve korake.</p>
+    <div class="ftr__btn"><a href="mailto:email@domen.com" class="btn btn--solid btn--fill"><span>Zakažite konsultacije</span><span class="ar" aria-hidden="true">→</span></a></div>
+  </div>
+  <div class="ftr__grid">
+    <div class="ftr__brand">
+      <div class="ftr__logo display">EDGE®</div>
+      <span class="mono muted">ARHITEKTONSKI STUDIO</span>
+    </div>
+    <nav class="ftr__col" aria-label="Navigacija u podnožju"><span class="mono muted">NAVIGACIJA</span><a href="#projekti">Projekti</a><a href="#pristup">Pristup</a><a href="#proces">Proces</a><a href="#pristup">Održivost</a><a href="#kontakt">Kontakt</a></nav>
+    <div class="ftr__col"><span class="mono muted">KONTAKT</span><a href="mailto:email@domen.com">email@domen.com</a><a href="tel:+0000000000000">+000 00 000 0000</a></div>
+    <div class="ftr__col"><span class="mono muted">STUDIO</span><span>Ulica i broj</span><span>Grad, Država</span></div>
+    <div class="ftr__col"><span class="mono muted">MREŽE</span><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+  </div>
+</footer>
+
+<!-- AFTER FOOTER -->
+<div class="after mono">
+  <span>© 2026 EDGE® ARCHITECTURE STUDIO. SVA PRAVA ZADRŽANA.</span>
+  <nav class="after__links" aria-label="Pravne informacije"><a href="#">USLOVI KORIŠĆENJA</a><a href="#">POLITIKA PRIVATNOSTI</a><a href="#">KOLAČIĆI</a></nav>
+</div>
+</body>
+</html>
