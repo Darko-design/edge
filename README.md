@@ -29,6 +29,10 @@ direktno na slici, npr. vile u heru su spuštene da se vidi krov.
 
 Isti portret je na svih 5 izjava klijenata.
 
+Sekcija Proces: četiri koraka (broj, naslov, opis, slika) koji se pri skrolu slažu jedan preko drugog
+(CSS `position: sticky`); od prethodnih koraka ostaje vidljiv samo gornji deo (`--strip` u CSS-u),
+a linija na vrhu koraka se puni dok korak dolazi na svoje mesto. Slike koraka su postojeće slike sa sajta.
+
 ## After footer
 
 Traka ispod podnožja (`.after`): © i „Sva prava zadržana", linkovi Uslovi korišćenja / Politika privatnosti / Kolačići

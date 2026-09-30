@@ -65,7 +65,7 @@
       };
     };
   }
-  $$('[data-hero-n], [data-hero-type], [data-p-n], [data-p-type], [data-p-place], [data-proc-n], [data-t-n]').forEach(function (el) {
+  $$('[data-hero-type], [data-p-type], [data-p-place], [data-t-n]').forEach(function (el) {
     el.setAttribute('data-roll', '');
   });
 
@@ -99,7 +99,6 @@
      --------------------------------------------------------------------- */
   var hero = $('.hero');
   var slides = $$('.slide', hero);
-  var heroN = $('[data-hero-n]', hero);
   var heroType = $('[data-hero-type]', hero);
   var HERO_MS = 3500;
   var cur = 0, prev = slides.length - 1, heroTimer = 0, heroInView = true;
@@ -109,7 +108,6 @@
       s.classList.toggle('is-on', i === cur);
       s.classList.toggle('is-prev', i === prev);
     });
-    roll(heroN, pad2(cur + 1), 1);
     roll(heroType, slides[cur].dataset.type.toUpperCase(), 1);
   }
   function heroLoop() {
@@ -134,14 +132,13 @@
   });
   // grad, godina i opis za svaki projekat (redom kao slike i naslovi)
   var P_INFO = [
-    { place: 'MIAMI · 2025', desc: 'Moderna stambena zgrada čistih linija i savremenog karaktera, projektovana sa fokusom na udobnost i kvalitet svakodnevnog života.' },
-    { place: 'NEW YORK · 2024', desc: 'Savremena poslovna zgrada definisana staklenom fasadom, prirodnim svetlom i otvorenim kancelarijskim prostorima.' },
-    { place: 'CHICAGO · 2025', desc: 'Reprezentativan javni prostor koji povezuje široko stepenište sa ulazom u savremenu arhitektonsku celinu.' },
-    { place: 'LOS ANGELES · 2024', desc: 'Elegantna moderna vila okružena pažljivo oblikovanim pejzažom, sa bazenom koji postaje centralni deo spoljašnjeg prostora.' },
-    { place: 'SEATTLE · 2023', desc: 'Savremeno oblikovana autobuska stanica koja pruža funkcionalno i prijatno zaklonjeno mesto za svakodnevne korisnike javnog prevoza.' },
-    { place: 'AUSTIN · 2025', desc: 'Prostran savremeni kancelarijski enterijer oblikovan za timski rad, sa prijatnom atmosferom, prirodnim materijalima i čistim linijama.' }
+    { place: 'MIAMI, 2025', desc: 'Moderna stambena zgrada čistih linija i savremenog karaktera, projektovana sa fokusom na udobnost i kvalitet svakodnevnog života.' },
+    { place: 'NEW YORK, 2024', desc: 'Savremena poslovna zgrada definisana staklenom fasadom, prirodnim svetlom i otvorenim kancelarijskim prostorima.' },
+    { place: 'CHICAGO, 2025', desc: 'Reprezentativan javni prostor koji povezuje široko stepenište sa ulazom u savremenu arhitektonsku celinu.' },
+    { place: 'LOS ANGELES, 2024', desc: 'Elegantna moderna vila okružena pažljivo oblikovanim pejzažom, sa bazenom koji postaje centralni deo spoljašnjeg prostora.' },
+    { place: 'SEATTLE, 2023', desc: 'Savremeno oblikovana autobuska stanica koja pruža funkcionalno i prijatno zaklonjeno mesto za svakodnevne korisnike javnog prevoza.' },
+    { place: 'AUSTIN, 2025', desc: 'Prostran savremeni kancelarijski enterijer oblikovan za timski rad, sa prijatnom atmosferom, prirodnim materijalima i čistim linijama.' }
   ];
-  var pN = $$('[data-p-n]', projPin);
   var pType = $$('[data-p-type]', projPin);
   var pPlace = $('[data-p-place]', projPin);
   var pDesc = $('[data-p-desc]', projPin);
@@ -168,7 +165,6 @@
     if (idx !== pIdx) {
       var dir = idx > pIdx ? 1 : -1;
       pIdx = idx;
-      pN.forEach(function (el) { roll(el, pad2(idx + 1), dir); });
       pType.forEach(function (el) { roll(el, pimgs[idx].type, dir); });
       roll(pPlace, P_INFO[idx].place, dir);
       roll(pDesc, P_INFO[idx].desc, dir);
@@ -222,25 +218,19 @@
   }
 
   /* ---------------------------------------------------------------------
-     Proces: na desktopu pinovano, na telefonu/tabletu prati skrol kroz listu
+     Proces: koraci se slažu (CSS sticky); linija na vrhu koraka se puni
+     dok korak putuje od dna ekrana do svog mesta
      --------------------------------------------------------------------- */
-  var procPin = $('.pin--proc');
-  var steps = $$('.step', procPin);
-  var stepsList = $('.steps', procPin);
-  var procLine = $('.proc__line i', procPin);
-  var procN = $('[data-proc-n]', procPin);
-  var procIdx = 0;
-
-  function procSet(p, idx) {
-    procLine.style.transform = 'scaleY(' + p.toFixed(4) + ')';
-    if (idx === procIdx) return;
-    var dir = idx > procIdx ? 1 : -1;
-    procIdx = idx;
-    steps.forEach(function (s, i) {
-      s.classList.toggle('is-cur', i === idx);
-      s.classList.toggle('is-past', i <= idx);
+  var procSec = $('.process');
+  var psteps = $$('.pstep', procSec).map(function (el) { return { el: el, line: $('.pstep__line i', el), p: -1 }; });
+  var procBox = { top: 0, h: 0 };
+  function procLines() {
+    // prvo sva čitanja, pa tek onda upisivanja (bez nepotrebnog preračunavanja stranice)
+    var tops = psteps.map(function (s) { return s.el.getBoundingClientRect().top; });
+    psteps.forEach(function (s, i) {
+      var p = Math.round(clamp((vh - tops[i]) / Math.max(1, vh - s.stick)) * 1000) / 1000;
+      if (p !== s.p) { s.p = p; s.line.style.transform = 'scaleX(' + p + ')'; }
     });
-    roll(procN, pad2(idx + 1), dir);
   }
 
   /* ---------------------------------------------------------------------
@@ -250,11 +240,9 @@
      --------------------------------------------------------------------- */
   var pins = [
     { el: projPin, render: projRender },
-    { el: aboutPin, render: aboutRender, measure: aboutMeasure },
-    { el: procPin, render: function (p) { procSet(p, Math.min(3, Math.floor(p * 4))); }, deskOnly: true }
+    { el: aboutPin, render: aboutRender, measure: aboutMeasure }
   ];
   pins.forEach(function (p) { p.frame = $('.pin__frame', p.el); p.cur = 0; p.target = 0; p.active = false; });
-  var flow = { top: 0, h: 1, stepTops: [] };
   var vh = window.innerHeight, vw = window.innerWidth;
   var ticking = false, animating = false, lastT = 0;
   var SMOOTH = 0.14; // 1 = bez uglađivanja
@@ -273,7 +261,7 @@
 
   function measure() {
     fitDrum();
-    var y = window.scrollY, desk = mqDesk.matches;
+    var y = window.scrollY;
     vh = window.innerHeight;
     vw = window.innerWidth;
     pins.forEach(function (p) {
@@ -283,14 +271,13 @@
       p.fh = p.frame.offsetHeight;
       p.dist = Math.max(1, p.h - p.fh);
       if (p.measure) p.measure(p.fh);
-      if (p.deskOnly && !desk) return;
       p.cur = p.target = clamp((y - p.top) / p.dist);
       p.render(p.cur);
     });
-    var lr = stepsList.getBoundingClientRect();
-    flow.top = lr.top + y;
-    flow.h = Math.max(1, lr.height);
-    flow.stepTops = steps.map(function (s) { return s.getBoundingClientRect().top + y; });
+    var pr = procSec.getBoundingClientRect();
+    procBox.top = pr.top + y;
+    procBox.h = pr.height;
+    psteps.forEach(function (s) { s.stick = parseFloat(getComputedStyle(s.el).top) || 0; });
     update();
   }
 
@@ -298,18 +285,12 @@
     ticking = false;
     // promena veličine (npr. adresna traka na telefonu) — ponovo izmeri
     if (window.innerWidth !== vw || window.innerHeight !== vh) { measure(); return; }
-    var y = window.scrollY, desk = mqDesk.matches;
+    var y = window.scrollY;
     pins.forEach(function (p) {
-      p.active = !(p.deskOnly && !desk) && !(y + vh < p.top - vh * 0.25 || y > p.top + p.h + vh * 0.25);
+      p.active = !(y + vh < p.top - vh * 0.25 || y > p.top + p.h + vh * 0.25);
       p.target = clamp((y - p.top) / p.dist);
     });
-    if (!desk) {
-      var mark = y + vh * 0.6;
-      var fp = clamp((mark - flow.top) / flow.h);
-      var idx = 0;
-      flow.stepTops.forEach(function (t, i) { if (mark >= t) idx = i; });
-      procSet(fp, idx);
-    }
+    if (y + vh > procBox.top && y < procBox.top + procBox.h) procLines();
     if (!animating) { animating = true; lastT = performance.now(); requestAnimationFrame(tick); }
   }
 
@@ -428,7 +409,7 @@
   var REVEAL = [
     ['.projects__intro .label', 'up'], ['.projects__intro h2', 'lines'], ['.projects__intro .lead', 'up', 0.2], ['.projects__hint', 'up', 0.35],
     ['.approach > .label', 'up'], ['.approach > h2', 'lines'], ['.pr-wrap', 'up', 0.2],
-    ['.proc__l .label', 'up'], ['.proc__l h2', 'lines'], ['.proc__l .lead', 'up', 0.2], ['.proc__num', 'up', 0.3],
+    ['.proc__intro .label', 'up'], ['.proc__intro h2', 'lines'], ['.proc__intro .lead', 'up', 0.2],
     ['.testi__head .label', 'up'], ['.testi__head h2', 'lines'], ['.testi__head .lead', 'up', 0.2],
     ['.testi__quotes', 'up', 0.1], ['.testi__who', 'up', 0.25],
     ['.cta', 'up'], ['.ftr__row', 'up', 0.1], ['.ftr__logo', 'lines'], ['.ftr__brand .mono', 'up', 0.2],
