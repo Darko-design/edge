@@ -205,6 +205,7 @@ h1, h2, h3, p, blockquote, ol { margin: 0; }
 .pic { position: absolute; inset: 0; overflow: hidden; background: var(--tone, var(--card)); }
 .pic img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
 .js .pic img[loading="lazy"] { opacity: 0; transition: opacity .6s ease; }
+.js .testi .pic img[loading="lazy"] { opacity: 1; transition: none; }
 .js .pic img.is-loaded { opacity: 1; }
 
 .ph span {
@@ -553,8 +554,8 @@ h1, h2, h3, p, blockquote, ol { margin: 0; }
 .testi__head .lead { max-width: 44rem; }
 .testi__body { display: contents; }
 .testi__quotes { grid-area: q; display: grid; }
-.tq { grid-area: 1 / 1; opacity: 0; transform: translateY(var(--ty, 2rem)); transition: opacity .4s ease, transform .6s var(--O); }
-.tq.is-on { opacity: 1; transform: none; transition: opacity .7s ease .15s, transform 1s var(--O) .15s; }
+.tq { grid-area: 1 / 1; opacity: 0; }
+.tq.is-on { opacity: 1; }
 .tq p { font-size: 2.6rem; line-height: 1.2; text-align: center; text-wrap: balance; }
 .testi__count { grid-area: count; text-align: center; }
 .testi__prev { grid-area: prev; }
@@ -569,10 +570,9 @@ h1, h2, h3, p, blockquote, ol { margin: 0; }
 .tpic.is-prev { z-index: 2; }
 .tpic.is-on { z-index: 3; }
 .tpic.is-prev .tpic__o, .tpic.is-prev .tpic__i, .tpic.is-on .tpic__o, .tpic.is-on .tpic__i { transform: none; }
-.tpic.is-on .tpic__o, .tpic.is-on .tpic__i { transition: transform 1s var(--E); }
 .tpic .ph span { font-size: 10px; }
 .testi__names { display: grid; text-align: center; }
-.tname { grid-area: 1 / 1; display: flex; flex-direction: column; gap: .4rem; opacity: 0; transition: opacity .5s ease; }
+.tname { grid-area: 1 / 1; display: flex; flex-direction: column; gap: .4rem; opacity: 0; }
 .tname.is-on { opacity: 1; }
 .tname__n { font-size: 16px; font-weight: 600; }
 .no-tr, .no-tr * { transition: none !important; }

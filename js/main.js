@@ -378,7 +378,7 @@
       el.setAttribute('aria-hidden', String(i !== next));
     });
     tnames.forEach(function (el, i) { el.classList.toggle('is-on', i === next); el.setAttribute('aria-hidden', String(i !== next)); });
-    roll(tN, pad2(next + 1), d);
+    tN.textContent = pad2(next + 1);
     tc = next;
     tLoop();
   }
@@ -410,8 +410,6 @@
     ['.projects__intro .label', 'up'], ['.projects__intro h2', 'lines'], ['.projects__intro .lead', 'up', 0.2], ['.projects__hint', 'up', 0.35],
     ['.approach > .label', 'up'], ['.approach > h2', 'lines'], ['.pr-wrap', 'up', 0.2],
     ['.proc__intro .label', 'up'], ['.proc__intro h2', 'lines'], ['.proc__intro .lead', 'up', 0.2],
-    ['.testi__head .label', 'up'], ['.testi__head h2', 'lines'], ['.testi__head .lead', 'up', 0.2],
-    ['.testi__quotes', 'up', 0.1], ['.testi__who', 'up', 0.25],
     ['.cta', 'up'], ['.ftr__row', 'up', 0.1], ['.ftr__logo', 'lines'], ['.ftr__brand .mono', 'up', 0.2],
     ['.ftr__col', 'up', 0.05, 0.08]
   ];
