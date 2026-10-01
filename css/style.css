@@ -475,7 +475,7 @@ h1, h2, h3, p, blockquote, ol { margin: 0; }
   display: flex; flex-direction: column; align-items: center;
   text-align: center;
 }
-.about__h { display: flex; flex-direction: column; align-items: center; will-change: transform, opacity; }
+.about__h { display: flex; flex-direction: column; align-items: center; }
 .about__txt { font-size: 2rem; line-height: 1.35; text-wrap: pretty; }
 .about__txt span { opacity: .16; }
 

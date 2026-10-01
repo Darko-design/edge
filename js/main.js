@@ -178,7 +178,6 @@
   var aboutPin = $('.pin--about');
   var ring = $('.ring', aboutPin);
   var cards = $$('.ring__card', ring).map(function (el) { return { el: el, z: -1 }; });
-  var aboutHead = $('.about__h', aboutPin);
   var wordsEl = $('[data-words]', aboutPin);
   var words = [];
   (function splitWords() {
@@ -212,9 +211,6 @@
       var op = Math.round((0.16 + clamp((p - th) / 0.08) * 0.84) * 100) / 100;
       if (op !== w.op) { w.op = op; w.el.style.opacity = op; }
     });
-    var v = Math.min(1, p / 0.1);
-    aboutHead.style.opacity = v.toFixed(3);
-    aboutHead.style.transform = 'translate3d(0,' + ((1 - v) * 24).toFixed(1) + 'px,0)';
   }
 
   /* ---------------------------------------------------------------------
